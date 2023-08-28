@@ -1,0 +1,24 @@
+Our purpose is to estimate the Value-at-Risk (VaR) of a portfolio consisting of four
+financial instruments based on two GARCH-family models. We first created a portfolio
+and checked the basic properties of a time series of this portfolio. Then we focused on
+finding the best model from the GARCH family. Finally, we estimated the VaR of the
+portfolio. Our portfolio is composed of 3 financial instruments and 1 cryptocurrency
+S&P 500, DAX, WAG20, and BIT our consideration period of 13 years, just after the
+2008 world financial crisis, which means that our sample period starts from 01/01/ 2009
+to 31/05/2022, which is the last day I started the research
+4.1 PORTFOLIO ANALYSIS
+We started by downloading a dataset of daily observations of SP&500, DAX, WIG20 and
+BTC. The chosen period was 2009/01/01 – 2022/05/31. We built a portfolio consisting of
+the above four instruments. We also calculated the log returns of every instrument as well
+as the returns for an equally weighted portfolio (EWP). Table 2 Alpha1 is negative and
+significant, so the asymmetry is found According to the weighted Ljung-box test, the
+initial lags are NOT serially correlated P-values on the weighted ljung-box test on
+squared residuals are fairly high, and first, lags are significant, indicating we need not add
+anything to the covariance equation. P-values on the weighted ARCH LM test are fairly
+high, indicating we need not add anything to the variance equation.
+The test results are higher than the crucial value. Therefore the null is rejected for all the
+parameters except gamma1. The Nyblom stability test verifies that each parameter
+separately is stable over time (no structural breaks in the model). We also accept the
+stability jointly (1.9723 < 2.11). The model as a whole is stable over time The Sign Bias
+Test verifies that the asymmetry has been captured correctly in the estimated model. The
+model does not require higher order. The statistics are higher than the significance level.
