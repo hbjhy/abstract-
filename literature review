@@ -1,0 +1,215 @@
+It would appear that accurately measuring and projecting market losses is of the utmost
+importance in both developed and emerging financial markets. The increasing interest shown
+by foreign financial investors in investing in emerging financial markets highlights the
+significance of accurately quantifying and predicting market risk. Zikovic & Aktan (2009) .
+Lower liquidity, frequent internal and external shocks, and a higher degree of insider trading are
+the fundamental characteristics of emerging markets, all of which contribute to the market's
+increased volatility. Miletic (2013).
+Emerging markets are distinguished from developed countries by a greater influence of internal
+trade, as well as by high volatility, illiquidity, and market shallowness. These characteristics
+combine to make the assessment of VaR using typical techniques that assume a normal
+distribution substantially more difficult, and they are only a few of the numerous studies that
+deal with the proper estimate and forecasting. Alexander and Leigh (1997). Despite this, there
+is no such thing as a one-size-fits-all model for risk mapping. Within the United States Federal
+Crop Insurance Program context, investigated VaR and dependence models. Ramsey and
+Goodwin (2019)
+Due to the fact that the program encompasses policies for such a diverse assortment of crops,
+plans, and locations, this matter is quite complicated. The outcomes are influenced by the
+weather as well as other latent variables such as pests. Because of this, the dependency structure
+is quite complicated and a standard reinsurance agreement (SRA) makes it possible for a portion
+of the risk to be transferred to the federal government, the calculation of value at risk (VaR) is
+extremely important. Christoffersen, Hahn, and Inoue (2001), It is common practice to express
+VaR in terms of a probable maximum loss, also known as PML, or as a return in the form of a
+loss over a specified time period. The body of work on VaR models in emerging financial
+markets, as well as the empirical research into these models, is not nearly as extensive as the
+body of work that addresses the calculation of VaR in developed financial markets some
+examples of this type of work include.De Melo Mendes (2003).
+This is in contrast to the body of work that addresses the calculation of VaR in developed
+financial markets. Using, but not limited to, historical time series data did not make it possible
+to carry out an econometric analysis that could be relied upon. States that this is due to the
+elliptical shape of the data. (the stock markets of the vast majority of these countries didn't even
+come into existence until the early 1990s) .Zikovic and Aktan (2009) To determine whether
+there was or wasn't Connection between the start of the global financial crisis and the relativeperformance of VaR models of the returns of indices on the Turkish and Croatian stock
+exchanges. Through the use of this study, they were able to show that theoretical frameworks
+such as extreme value theory and The models that are the most accurate are hybrid historical
+simulations, whereas other models grossly underestimate the level of risk. Djakovic and Radisic
+(2009).
+The research conducted an analysis of the stock markets of four developing nations
+Slovenia, Croatia, Serbia, and Hungary; primary takeaways from their research indicated
+that, given stable market conditions, the analyzed stock markets had the potential to
+outperform the developed nations' stock markets, while the market volatility was being
+analyzed, the models which included parametric and historical simulation models provided
+accurate forecasts of VaR estimations with a confidence level of 95%. Cheng, and Wong
+(2002), Andjelic (2010). Estimates of VaR parameters can be obtained from models, and the
+level of confidence in these estimates is typically at least 99% of the time method, in addition
+to Forecasting the value at risk of an index on a stock exchange in the Serbian financial
+market using the GARCH and integrated GARCH (IGARCH) models.
+Mladenovic, Andjelic and Radisic (2010) .
+An investigation was conducted into the efficacy of the RiskMetrics method, and They
+arrived at the conclusion that GARCH models, when used in conjunction with the theory of
+extreme values (the peaks-over-threshold method), decrease the overall mean value of the
+value at risk, and that these models are superior to the RiskMetrics method, which is used
+in conjunction with the IGARCH model. Miletic and Miletic (2012)
+Despite the fact that the phrase "Value at Risk" did not become common parlance until the
+middle of the 1990s, the measurement's roots go far further back in time. The mathematical
+foundations of VaR were principally conceived of and developed within the framework of
+portfolio theory . Harry Markowitz (1990). Despite the fact that they were working towards
+a distinct goal, which was the development of optimum investment portfolios for equity
+investors. VaR is calculated with a primary emphasis on market risks and the consequences
+of the comovements in these risks. In particular, the focus on market risks is key to the
+process. Karen K. Lewis (1999)
+However, the crises that have befallen financial service corporations over the course of time
+and the regulatory reactions to these crises served as the motivation for the application of VaRmeasures in these organizations. Following the Great Depression and the many bank failures
+that took place during this era, there was a period of economic instability. Aswath Damodaran
+(2007), the Securities Exchange Act was passed. Zikovic and Aktan (2008) This act
+established the Securities and Exchange Commission (SEC) and mandated that banks keep
+their borrowings at a level that was less than 2,000 per cent of their equity capital. This marked
+the start of the regulatory capital requirements that banks have to comply with. In the decades
+that followed, financial institutions developed various risk mitigation strategies and
+management mechanisms in order to guarantee that they would satisfy these capital needs.
+Randall Guynn, Davis Polk (2010)
+The Uniform Net Capital Rule (UNCR), which was enacted by the SEC in 1975, was
+responsible for the refinement and expansion of capital requirements. In accordance with this
+rule, the financial assets that banks held were divided into twelve distinct depending on the
+degree of risk connected with each, and the banks were required to maintain varying levels of
+capital for each class, ranging from 0% for short-term treasuries to 30% for
+equities.https://www.sec.gov/enforce/34-82951
+The heightened risk that was produced in the early 1970s due to the emergence of derivative
+markets and floating-rate currency rates led to the rise of capital needs in many different
+industries. Aswath Damodaran (2007). This was done in response to In quarterly statements
+that were termed " In its "Financial and Operating Combined Uniform Single" (FOCUS)
+reports, financial institutions were required to report on the calculations that went into their
+capital reserves”. Roberto Bustreo (2013)
+In 1980, the SEC instituted the first regulatory measures that evoke Value at Risk by tying
+comparing the capital needs of financial service companies to the damages that might result
+from a 95% confidence level over a 30-day interval in various security classes; these potential
+losses were computed using historical returns. Aswath Damodaron (2007) Value at Risk is a
+risk management framework that was developed by J. Markowitz and first introduced in the
+1970s. The SEC clearly intended for financial services businesses to start the process of
+assessing one-month 95% Value at Risks and keep sufficient capital to cover the probable
+losses, despite the fact that the metrics were labeled as haircuts rather than Value or Capital at
+Risk. Aswath Damodaran (2007) This was the case despite the fact that in place of Value or
+Capital at Risk, metrics were referred to as haircuts. VALUE AT RISK (VAR) - New York
+University. https://pages.stern.nyu.edu/~adamodar/pdfiles/papers/VAR.pdfAround the same time, the trading portfolios of investment and commercial banks were
+getting bigger and more volatile, which resulted in the need for risk management
+techniques that were both more complex and more timely. In 1986, Ken Garbade at
+Banker's Trust developed sophisticated metrics of Value at Exposure of the company's
+fixed-income holdings to danger. Bond interest rates of varying maturities were used to
+derive these measures. All save the most senior workers of Banker's Trust had access to
+these internal documents. https://documentsn.com/document/c5b0_value-at-risk-var.html
+By the early 1990s, a large number of companies that provide financial services had created
+basic measurements of Value at Risk, with a large variety of approaches to its measurement
+used. Ken Garbade (1990)
+After a series of disastrous losses associated with the use of derivatives and influence
+around 1993 and 1995, firms were ready for more comprehensive risk measures. This was
+made possible by the failure of Barings, the British investment bank, due to the unlicensed
+dealing in Nikkei futures and options by Singaporean trader NickLeeson.
+https://pages.stern.nyu.edu/~adamodar/pdfiles/papers/VAR.The collapse of Barings was
+the climax of these losses, and it signalled that businesses were ready to implement broader
+risk controls. J.P. Morgan (1995) The data on the variances of and covariances across
+various security and asset classes, which J.P. Morgan had been using internally for almost
+a decade to manage risk, were made available to the public. J.P Morgan (1995). This
+enabled software manufacturers to develop software that could measure risk. The company
+decided to call the service "Risk Metrics," and it described the risk measure that was
+derived from the data using the phrase "Value at Risk." The commercial and investment
+banks as well as the regulatory bodies that oversaw them, quickly warmed up to the
+proposal because of its intuitive appeal, which found a ready audience with them the
+previous 10 years have seen a number of changes, value at risk (VaR) has emerged as the
+preeminent method for determining the level of risk exposure in financial service
+corporations and has even started to gain popularity in other types of businesses. J.P.
+Morgan (1995)
+The approach that is taken by extreme value theory is marginally superior to that which is taken
+by the GARCH model was the conclusion that was reached. Mladenovic et al. (2012). This
+research was based on the authors' findings. In addition to the nations located in Eastern Europe
+(Bulgaria, the Czech Republic, Hungary, Croatia, and Romania). And Serbia), but in general,
+they recommend utilizing both strategies for improved market risk management. This is due to
+the fact that markets are becoming increasingly volatile. Measurement. Bucevska (2012)Some evidence that the most accurate models of the GARCH family make use of the following
+formula: Estimating the level of volatility that exists on the Macedonian stock market using
+the asymmetric exponential moving average is the model that has proven to be the most
+accurate. Julija, Milena & Saša (2017) GARCH (EGARCH) model with Student's tdistribution, the EGARCH model with normal, GARCH (EGARCH) model with GARCH
+(EGARCH) model with, distribution in addition to the GARCH-GJR model that was developed
+by Glosten, Jagannathan, and Runkle. GARCH (EGARCH) model with normal distribution.
+This study's conclusions have substantial implications for the Methodology that should be used
+to estimate VaR in volatile environments. Julija, Milena & Saša (2017) The findings also shed
+light on the conditions that investors in emerging capital markets will need to address in order
+to be successful. In addition to Miletic, Miletic was also responsible for the implementation of
+the GARCH models (2015). The study's objective has been to develop estimate methods that
+are more accurate and provide more trustworthy values for variance and covariance, which can
+then be used in VaR calculations. Some people have proposed making improvements to
+sampling techniques and developing new data innovations, both of which would make it
+possible to get more accurate estimates of variances and covariances going ahead. Some people
+believe that improvements in statistical methods may provide more accurate estimates from
+the same data. Specifically, the standard deviation of returns is assumed not to fluctuate over
+time in order to calculate VaR using traditional methods (homoskedasticity). When the
+standard deviation is allowed to fluctuate over time, Engle contends, we receive considerably
+more accurate predictions. This is due to the fact that these models include time-varying
+standard deviations (heteroskedasticity). Engle, R., (2001), Aswath Damodaran ( 2007)
+In fact, he suggests two variants—Autoregressive Conditional Heteroskedasticity (ARCH)
+and Autoregressive Conditional Heteroskedasticity (GARCH)—that provide more
+accurate variance predictions and, thus, more reliable valuations of risk. These forms of
+heteroskedasticity are called as Autoregressive Conditional Heteroskedasticity (ARCH)
+and Generalized ARCH (GARCH), respectively. However, the variance-covariance VaRestimate was designed for portfolios in which the relationship between risk and portfolio
+positions is linear, which is another criticism that may be levelled against it. Aswath
+Damodaran(2007) This is a criticism that may be thrown against the variance-covariance
+estimate of VaR. Since of this, it is possible for it to fail when the portfolio contains options
+because the payoffs on options do not follow a linear pattern. Researchers have created
+quadratic Value at-risk metrics to manage the implications of options and other non-linear
+instruments that might be used in portfolios. Britten-Jones, M. and Schaefer, S.M (1999)
+Researchers are now able to estimate the Value at Risk for complex portfolios that
+incorporate options and option-like instruments such as convertible bonds. This contrasts
+with the more conventional linear models, which are known as delta-normal models. The
+price to pay, however, is that the mathematics involved in determining the VaR will
+become far more sophisticated, and a portion of the intuitive understanding will be lost
+along the way. Julija, Milena & Saša (2017) The conditional standard deviation used herein
+serves as the first theoretical model of volatility, and it was proposed by Engle (1982) as a
+solution to the problem of the volatility of inflation rate time series. The Autoregressive
+Conditionally Heteroskedastic (ARCH) model is an example of this type of model. The
+Generalized Autoregressive Conditionally Heteroskedastic (GARCH) model was
+introduced by Bollerslev (1986) primarily for financial data. This model is particularly
+well-suited for the investigation and prediction of volatility. Nelson's (1991)
+Exponential GARCH (EGARCH) model enables both positive and negative returns on
+assets to have an asymmetric influence on the model's output of volatility. Another
+volatility model that takes into account leverage is called the Threshold-GARCH (TGARCH) model, which was developed by Zakoian (1994). The univariate GARCH model
+is converted into the multivariate GARCH model so that the portfolio of assets may be
+analyzed. The Constant Conditional Correlation (CCC-) GARCH model was initially
+suggested by Bollerslev (1990). Engle and Sheppard (2001) enhanced the CCC-GARCH
+model by configuring the correlation matrix to vary over time. As a result, the Dynamic
+Conditional Correlation (DCC-) GARCH model was established. Julija, Milena & Saša
+(2017)In recent years, some accomplishments have been accomplished using the ARMA model,
+ARCH model, and\SGARCH model in the research of volatility in the Chinese mainland stock
+market. Wang, Yu, and Zhou (2014) conducted an empirical investigation of the link that exists
+between the Shanghai Composite Index's return rate and the threat it presents. https://en.frontsci.com/index.php/memf/article/view/327/431
+According to the findings, there is a satisfactory fitting effect, which illustrates the connection
+that exists between the rate of return and the level of risk. This helps me not only study\she the
+return rate but also have volatility to gauge the danger while researching the Chinese
+mainland\sstock market. Lu (2006) Developed a non-parametric GARCH model to forecast
+the volatility of the Chinese stock market better. Both the ARIMA and ARCH models were
+employed by him (2008) to forecast stock prices, and the findings demonstrate that the ARCH
+model is more satisfying. For this reason, I combine the GARCH model with the ARMA
+model.
+The exchange rate risk and interest rate risk were both integrated into the capital market-based
+asset-pricing model that Solnik (1972) developed. After conducting research on the stock
+markets of seven different countries, the researchers came to the conclusion that although
+domestic factors are still the most significant contributors to a country's capital price, factors
+from other countries do have some impact on the capital price of a country. On the basis of
+this, King and Wadhwani (1990) applied the model to the markets of many different countries,
+thereby providing further proof that the stock price of a country is influenced not only by the
+information of its own public information but also by the stock price information of other
+countries. Karolyi (1996) discovered that there is a transmission in both directions between the
+stock markets of the United States and Japan. According to the findings of Hu and Xu (2003),
+the volatility of the Hong Kong stock market is more strongly correlated with that of the
+Shanghai composite index than that of the United States stock market. Additionally, they
+learned that the Shanghai Composite Index's and the S&P Index's regression coefficients'
+degree of fitting is very low. Dongya Zhou (2020)
+This finding indicates that the connection between the United States and the Chinese mainland
+is still extremely poor. After the Asian financial crisis, Chen, Wu, and Liu (2006) observed
+that the interconnectedness of stock markets in 11 nations and regions in the Asia-Pacific area
+has greatly improved. This was the conclusion reached by the researchers.
+Although there may have been a short-term guiding relationship between the U.S. stock
+market and the Chinese mainland stock market, there is no stable cointegration relationshipbetween the Chinese mainland stock market and any other stock markets. The Chinese
+mainland stock market has a weak exogenous. Zhang (2005)
+further shown via the use of the E-GARCH model that there is no long-term cointegration
+link between the international stock market and the stock market on the Chinese mainland.
+However, the Hong Kong, London, and New York stock markets had one-way short-term
+spillovers on the stock market of the Chinese mainland mostly before the financial crisis
+that occurred in 1997. Zhang (2005)CHAP 2 METHODOLOGY
