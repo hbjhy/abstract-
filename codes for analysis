@@ -1,0 +1,171 @@
+#packages 
+library(zoo)
+library(tidyverse)
+library(xts)
+library(fBasics)  
+library(tseries)  
+library(FinTS)    
+library(car)      
+library(fGarch) 
+library(rugarch)
+# library(rmgarch)
+library(quantmod)
+source("functions/compare_ICs_GARCH.R")
+source("functions/compare_ICs_ugarchfit.R")
+SP500 <- 
+  getSymbols(Symbols = "^GSPC",             
+             from = "2018-01-01", 
+             to = "2022-05-31",   
+             auto.assign = FALSE)
+DAX<-
+  getSymbols(Symbols = "^GDAXI",             
+             from = "2018-01-01", 
+             to = "2022-05-31",   
+             auto.assign = FALSE)
+
+
+WIG20 <- read.csv("wig20_d.csv",
+                header = TRUE,  
+                sep = ",",      
+                dec = ".")      
+
+LTC<-
+  getSymbols(Symbols = "LTC-USD",             
+             from = "2018-01-01", 
+             to = "2022-05-31",   
+             auto.assign = FALSE)
+class(WIG20$Date)WIG20$Date <- as.Date(WIG20$Date, format = "%Y-%m-%d")
+WIG20 <-  xts(WIG20[, -1], 
+          WIG20$Date)
+str(WIG20)plot(data$rEWP,
+     col = c("blue"),
+     multi.panel = TRUE,
+     major.ticks = "years", 
+     grid.ticks.on = "years",
+     grid.ticks.lty = 3,
+     yaxis.same = FALSE,
+     main = "Portfolio returns")
+acf(data$rEWP, 
+    lag.max = 36, 
+    na.action = na.pass,
+    ylim = c(-0.1,0.1), # we rescale the vertical axis
+    col = "darkblue", 
+    lwd = 7, 
+    main = "ACF of log-returns of Portfolio")
+acf(data$rEWP^2, lag.max = 100, na.action = na.pass,
+    ylim = c(0, 0.25), 
+    col = "darkblue", lwd = 7,
+    main = "ACF of Portfolio squared returns")
+basicStats(data$rEWP)
+hist(data$rEWP, prob = T, breaks = 40)
+curve(dnorm(x, mean = mean(data$rEWP, na.rm = T),
+            sd  = sd(data$rEWP, na.rm = T)),
+            col = "darkblue", lwd = 2, add = TRUE)tibble(r = as.numeric(data$rEWP)) %>%
+  ggplot(aes(r)) +
+  geom_histogram(aes(y =..density..),
+                 colour = "black", 
+                 fill = "pink") +
+  stat_function(fun = dnorm, 
+                args = list(mean = mean(data$rEWP), 
+                            sd = sd(data$rEWP))) +
+  theme_bw() + 
+  labs(
+    title = "Density of the Portfolio log-returns", 
+    y = "", x = "",
+    caption = "source: own calculations"
+  )
+jarque.bera.test(data$rEWP)
+k.garch11 <- garchFit(~garch(1, 1),
+                      data = data$rEWP,
+                      include.mean = FALSE,
+                      cond.dist = "norm", 
+                      trace = FALSE) 
+summary(k.garch11)
+plot(k.garch11, which = 10)
+plot(k.garch11, which = 11)
+k.garch21 <- garchFit(~garch(2, 1),
+                      data = data$rEWP,
+                      include.mean = FALSE,
+                      cond.dist = "norm", 
+                      trace = FALSE) 
+summary(k.garch21)
+spec <- ugarchspec(variance.model = list(model = "sGARCH", 
+                   garchOrder = c(2, 1)),
+                   mean.model = list(armaOrder = c(1, 0), 
+                                     include.mean = TRUE), 
+                   distribution.model = "norm")
+
+k.ar1garch21 <- ugarchfit(spec = spec, 
+                          data = na.omit(data$rEWP))
+k.ar1garch21
+spec <- ugarchspec(# variance equation
+                   variance.model = list(model = "eGARCH", 
+                                         garchOrder = c(2, 1)),
+                   # sGARCH would stand for standard GARCH model
+                   # mean equation - lets use AR(1) as previously
+                   mean.model = list(armaOrder = c(1, 0), 
+                                     include.mean = TRUE), 
+                   # assumed distribution of errors
+                   distribution.model = "norm")
+compare_ICs_ugarchfit(c("k.ar1egarch21",
+                        "k.ar1garch21"))
+data$VaR <- q01 * k.ar1garch21@fit$sigma
+tail(data)
+sigma.forecast.longrun <- ugarchforecast(k.ar1garch21, n.ahead = 500)
+unconditional_sigma <- 
+  sqrt(
+    k.ar1garch21@model$pars["omega", 1] / 
+      (1 - 
+         k.ar1garch21@model$pars["alpha1", 1] -
+         k.ar1garch21@model$pars["beta1", 1]))
+plot(
+  c(as.numeric(k.ar1garch21@fit$sigma),
+    as.numeric(sigma.forecast.longrun@forecast$sigmaFor)),
+  type = "l",
+  ylab = "sigma")
+abline(h = unconditional_sigma, col = "red")
+start.date <- "2021-05-29"
+stop.date  <- "2022-05-29"
+
+
+start   <- as.numeric(data$obs[start.date])
+finish  <- as.numeric(data$obs[stop.date])
+data4 <- data[start:finish, ]
+VaR <- rep(NA, times = finish - start + 1)
+
+mu     <- rep(NA, times = finish - start + 1)
+omega  <- rep(NA, times = finish - start + 1)
+alpha1 <- rep(NA, times = finish - start + 1)
+beta1  <- rep(NA, times = finish - start + 1)
+time1 <- Sys.time()
+for (k in start:finish) {
+    tmp.data <- data[data$obs <= (k - 1), ]
+    #tmp.data <- tmp.data[as.Date("1990-03-23") <= tmp.data$Date, ]
+    tmp.data$rstd <- 
+      (tmp.data$rEWP - mean(tmp.data$rEWP, na.rm = T)) / sd(tmp.data$rEWP, na.rm = T)
+    q01  <- quantile(tmp.data$rstd, 0.01, na.rm = T)
+    spec <- 
+      ugarchspec(variance.model = list(model = "sGARCH", garchOrder = c(1, 1)),
+                 mean.model     = list(armaOrder = c(0, 0), include.mean = T),
+                 distribution.model = "norm")
+    tmp.garch11           <- ugarchfit(spec = spec, data = na.omit(tmp.data$rEWP))
+    sigma.forecast        <- ugarchforecast(tmp.garch11, n.ahead = 1)
+    sigma.forecast2       <- sigma.forecast@forecast$sigmaFor[1, 1]
+    VaR[k - start + 1]    <- q01 * sigma.forecast2
+    mu[k - start + 1]     <- tmp.garch11@fit$coef[1]
+    omega[k - start + 1]  <- tmp.garch11@fit$coef[2]
+    alpha1[k - start + 1] <- tmp.garch11@fit$coef[3]
+    beta1[k - start + 1]  <- tmp.garch11@fit$coef[4]
+  }
+time2 <- Sys.time()
+time2 - time1
+plot(data4.var,
+     col = c("blue", "green"),
+     multi.panel = FALSE,
+     major.ticks = "years", 
+     grid.ticks.on = "years",
+     grid.ticks.lty = 3,
+     yaxis.same = FALSE,
+     main = "Forecast returns vs value@risk")
+abline(h = 0, lty = 2)
+sum(data4$rEWP < data4$VaR) / length(data4$VaR)
